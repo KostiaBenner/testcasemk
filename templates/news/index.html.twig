@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Все новости</title>
+    </head>
+    <body>
+    <h1>Все новости</h1>
+
+    <ul id="navigation">
+        {% for item in news %}
+            <li>
+                {% if item.publishedAt %}
+                    <span>{{ item.publishedAt|date('Y-m-d') }}</span>
+                {% endif %}
+                <a href="{{ path('news_show', {'slug': item.slug}) }}">{{ item.title }}</a>
+            </li>
+        {% else %}
+            <li>Пока никаких новостей нет</li>
+        {% endfor %}
+    </ul>
+    </body>
+</html>

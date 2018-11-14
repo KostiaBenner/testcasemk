@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ item.title }}</title>
+    </head>
+    <body>
+
+        <a href="{{ path('news_list') }}"><< Назад к списку</a>
+
+        <h1>{{ item.title }}</h1>
+
+        {% if item.publishedAt %}
+            <div>{{ item.publishedAt|date('Y-m-d') }}</div>
+            <br>
+            <br>
+        {% endif %}
+
+        <div>
+            {{ item.text }}
+        </div>
+
+    </body>
+</html>
